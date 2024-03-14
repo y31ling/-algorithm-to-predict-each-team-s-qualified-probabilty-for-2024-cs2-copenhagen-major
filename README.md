@@ -12,6 +12,7 @@ For the second round, the highest seed will always facing the lowest seed.
 Start from the third round, the match will switch to swiss round same as valve notified.
 
 The judging of win or lose in a round is depending on the “power value” of the team, and the power value has a random float as maximum 20%. ( if someone so toxic or someone so sick)
+The power value of each team in my code is mostly the data (score） from hltv. And partially adjust it, such as i add more points to Ence because major is in Denmark, glave's hometown.
 
 You can change the power value and the random float as you wish.
 
@@ -43,5 +44,6 @@ team_16  #LEG
 第三轮开始采用瑞士轮，原理和v社公布的一致
 
 判断胜负的办法为赋予每一个队伍“战力值”，以及最大20%的随机浮动（有个不当人或者有个责任神）
-你可以自由更改每个队伍的战力值，就在代码的最顶部
+战力值由Hltv的沟槽野榜数据换算，并被小幅主观改动过，例如我给ence加了额外的一些分数，因为glave是主场作战有很大优势
+你可以自由更改每个队伍的战力值，就在代码的最顶部.
 BILIBILI 小扬羊
