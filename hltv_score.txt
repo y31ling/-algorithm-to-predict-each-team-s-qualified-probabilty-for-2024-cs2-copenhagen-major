@@ -1,0 +1,18 @@
+FAZE 926        to     1100
+SPRT 747
+VIT 709
+MOUZ 565
+G2 471
+NAVI 433
+VP 367
+C9 301
+HERC 252
+COMP 226
+EF 222
+GL 212
+FURIA/SAW 182
+《100            to       870
+MGLZ 95                870
+LEGACY/IMP 75      870
+
+  hltv score updated by 2024.3.20

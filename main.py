@@ -3,24 +3,25 @@ import random
 from collections import defaultdict
 
 # Define the power values for each team
-power_values = {f"team_{i}": 850  for i in range(1, 17) }
+power_values = {f"team_{i}": 1000  for i in range(1, 17) }
 seed_no = {f"team_{i}": i for i in range(1, 17) }
-power_values["team_1"] = 950   #C9
-power_values["team_2"] = 900   #EF
-power_values["team_3"] = 900   #ENCE
-power_values["team_4"] = 870   #APEKS
-power_values["team_5"] = 875   #HEROIC
-power_values["team_6"] = 810   #9PAND
-power_values["team_7"] = 840   #SAW
-power_values["team_8"] = 910   #FUR
-power_values["team_9"] = 800   #ECST
-power_values["team_10"] = 880   #MGLZ
-power_values["team_11"] = 850   #IMP
-power_values["team_12"] = 798  #PAIN
-power_values["team_13"] = 800   #LVG
-power_values["team_14"] = 835   #AMK
-power_values["team_15"] = 802   #KOI
-power_values["team_16"] = 785   #LEG
+# y= 820 + 0.3x
+power_values["team_1"] = 1100-25-25   #FAZE
+power_values["team_2"] = 1050   #SPIR
+power_values["team_3"] = 1032 +18  #VIT
+power_values["team_4"] = 990-15   #MOUZ
+power_values["team_5"] = 888 -18  #CPLX
+power_values["team_6"] = 1050        #930+50   #VP
+power_values["team_7"] = 950   #NAVI
+power_values["team_8"] = 1050 #961   #G2
+power_values["team_9"] = 910  +15 #C9
+power_values["team_10"] = 896 +4   #HRC
+power_values["team_11"] = 887  +3 #EF
+power_values["team_12"] = 950-25-25  #ECS
+power_values["team_13"] = 850 +20  #PAIN
+power_values["team_14"] = 880   #SAW
+power_values["team_15"] = 883   #GL
+power_values["team_16"] = 850 +20 #MGLZ
 
 
 pr30 = set() # tracks of 3:0 teams
@@ -156,7 +157,7 @@ res30 = defaultdict(int)
 res03 = defaultdict(int)
 #totaladv = defaultdict(int)
 
-for _ in range(1000):
+for _ in range(10000):
     promoted_teams = simulate_tournament()
     for team in promoted_teams:
         simulation_results[team] += 1
@@ -173,12 +174,12 @@ for _ in range(1000):
 
 # Calculate probabilities
 
-probq = {team: results / 10 for team, results in simulation_results.items()}
-prob3_0 = {team: results / 10 for team, results in res30.items()}
-prob0_3 = {team: results / 10 for team, results in res03.items()}
+probq = {team: results / 100 for team, results in simulation_results.items()}
+prob3_0 = {team: results / 100 for team, results in res30.items()}
+prob0_3 = {team: results / 100 for team, results in res03.items()}
 #totalprob = {team: results / 10 for team, results in totaladv.items()}
 
-print(prob0_3) #debug
+
 
 sorted_prob3 = {k: prob3_0[k] for k in sorted(prob3_0, key=lambda x: int(x.split('_')[1]))}
 formatted_output3 = "\n".join([f"{team}: {prob:.3f}%" for team, prob in sorted_prob3.items()])
